@@ -46,7 +46,7 @@ The goal of this project is to create a deep learning model that can accurately 
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/Amrithesh-k/BLANKAi.git
+   git clone https://github.com/Pranav-P-S/BLANKai.git
    cd your_repository
    ```
 
