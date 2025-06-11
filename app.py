@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-import tensorflow as tf
+#import tensorflow as tf
 import numpy as np
 
 # Set the background color and theme colors
@@ -33,12 +33,12 @@ st.markdown(f"""
 st.title("🐍🐍 Doc B - AI Image Analyzer 🐍🐍")
 
 # Load the pre-trained model
-model = tf.keras.models.load_model('scratch_alzheimer_pre_process')
+#model = tf.keras.models.load_model('scratch_alzheimer_pre_process')
 
 # Function to Analyze MRI Image
 
 
-def analyze_image(image):
+"""def analyze_image(image):
 
     prediction = model.predict(np.array([image]))
 
@@ -52,7 +52,7 @@ def analyze_image(image):
     labels = ['MildDemented', 'ModerateDemented', 'NonDemented',
               'VeryMildDemented']  # Replace with actual labels
     st.write(f"Predicted Label: {labels[predicted_label]}")
-
+"""
 
 # Streamlit Sidebar
 st.sidebar.title("🐍🐍 Doc B - Instructions 🐍🐍")
