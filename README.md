@@ -1,95 +1,129 @@
-# Alzheimer's Dataset Image Classification using TensorFlow
+# 🧠 BLANKai - Alzheimer's MRI Classifier
 
-This project uses TensorFlow to build and train a convolutional neural network (CNN) for classifying images from the Alzheimer's Dataset. The CNN is designed to classify images into four categories: Mild Demented, Moderate Demented, Non-Demented, and Very Mild Demented. It includes data preprocessing, model building, training, evaluation, and visualization of performance metrics.
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-active-success)
 
-## Project Overview
+> A Deep Learning application to classify Alzheimer's Disease stages from MRI scans using Convolutional Neural Networks.
 
-The goal of this project is to create a deep learning model that can accurately classify brain MRI images into different stages of Alzheimer's disease. The steps involved in the project include:
+---
 
-1. **Data Loading and Preprocessing**:
-   - Loading images from directories using `tf.keras.preprocessing.image.ImageDataGenerator`.
-   - Performing data augmentation such as brightness adjustment and zoom to enhance model robustness.
-   - Splitting the dataset into training, validation, and testing sets.
+## 📋 Table of Contents
+- [Project Overview](#-project-overview)
+- [Key Features](#-key-features)
+- [Directory Structure](#-directory-structure)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Model Details](#-model-details)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-2. **Model Architecture**:
-   - Defining a CNN architecture using TensorFlow's Keras API.
-   - Using separable convolution layers, batch normalization, max pooling, dropout, and dense layers.
-   - Compiling the model with categorical cross-entropy loss and metrics such as accuracy, precision, recall, and AUC.
+---
 
-3. **Training and Evaluation**:
-   - Training the model on the training data with early stopping and learning rate scheduling.
-   - Evaluating the model performance on the validation set using accuracy, loss, AUC, and precision metrics.
-   - Visualizing training history with plots for accuracy, loss, AUC, and precision over epochs.
+## 📖 Project Overview
 
-4. **Model Deployment and Testing**:
-   - Saving the trained model in H5 format for deployment.
-   - Testing the model on the separate test set and generating classification reports.
-   - Reporting metrics such as precision, recall, and F1-score for each class.
+BLANKai is a professional-grade machine learning project designed to assist in the early detection of Alzheimer's disease. Using a custom Convolutional Neural Network (CNN) architecture, the model analyzes brain MRI scans and classifies them into four stages:
 
-5. **GitHub Repository Structure**:
-   - **`app.py`**: Main script containing the entire TensorFlow pipeline from data loading to model evaluation.
-   - **`requirements.txt`**: List of Python dependencies required to run the project.
-   - **`README.md`**: Markdown file providing an overview of the project, installation instructions, usage examples, and results.
+1. **Non Demented**
+2. **Very Mild Demented**
+3. **Mild Demented**
+4. **Moderate Demented**
 
-## Requirements
+Visualizations and an interactive web interface are provided via Streamlit.
 
-- Python 3.6+
-- TensorFlow 2.x
-- NumPy
-- Matplotlib
-- scikit-learn
-- Seaborn
-- Pillow (PIL)
+---
 
-## Installation and Usage
+## ✨ Key Features
 
-1. **Clone the Repository**:
+- **High Accuracy Model**: Custom CNN with separable convolutions and batch normalization.
+- **Interactive UI**: User-friendly web interface for real-time image analysis.
+- **Comprehensive Analysis**: visual confidence scores and probability distributions.
+- **Reproducible Pipeline**: Clear notebook for training and data processing.
 
+---
+
+## 📂 Directory Structure
+
+```plaintext
+BLANKai/
+├── .github/            # GitHub Actions and workflows
+├── docs/               # Documentation and assets
+│   └── MODEL_CARD.md   # Detailed model performance info
+├── notebooks/          # Jupyter notebooks for training
+│   └── training_pipeline.ipynb
+├── src/                # Source code
+│   ├── app.py          # Streamlit application entry point
+│   ├── config.py       # Configuration and constants
+│   └── model.py        # Model architecture definition
+├── tests/              # Unit tests
+├── requirements.txt    # Project dependencies
+├── setup.py            # Package installation script
+└── README.md           # Project documentation
+```
+
+---
+
+## 🚀 Installation
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/Pranav-P-S/BLANKai.git
-   cd your_repository
+   cd BLANKai
    ```
 
-2. **Install Dependencies**:
+2. **Create a virtual environment**
+   ```bash
+   python -m venv venv
+   # Windows
+   .\venv\Scripts\activate
+   # macOS/Linux
+   source venv/bin/activate
+   ```
 
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the Script**:
+---
 
-   - Modify `app.py` with your dataset paths, image sizes, batch sizes, and model configurations.
-   - Execute the script to train the model and evaluate its performance.
+## 💻 Usage
 
-   ```bash
-   python app.py
-   ```
-
-4. **Model Evaluation and Visualization**:
-
-   - After running the script, view the generated plots for accuracy, loss, AUC, and precision metrics.
-   - Examine the classification report to understand model performance on the test set.
-
-## Example Usage
+### Running the Web Application
+To start the interactive interface:
 
 ```bash
-python app.py
+streamlit run src/app.py
 ```
 
-## Results and Performance
+Upload a `.jpg` or `.png` MRI scan to see the classification results immediately.
 
-- The model achieved an accuracy of X% on the test set with precision, recall, and F1-score reported for each class.
-- Training history plots show improvement in metrics over epochs with proper handling of overfitting and learning rate adjustment.
+### Training the Model
+To retrain the model or explore the data pipeline, open the notebook:
 
-## Contributing
+```bash
+jupyter notebook notebooks/training_pipeline.ipynb
+```
 
-Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
+---
 
-## License
+## 🧠 Model Details
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+For specific details on the architecture, training process, and performance metrics, please refer to the [Model Card](docs/MODEL_CARD.md).
 
-## Acknowledgments
+---
 
-- Inspiration and initial code structure derived from practical deep learning applications.
-- TensorFlow and Keras documentation and community for their valuable resources.
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before submitting a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Developed by Pranav P S**
